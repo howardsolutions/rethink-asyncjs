@@ -29,6 +29,8 @@ if I have a bunch of things, I don't wanna wait to do the second set of tasks un
 
 👉 Asynchronous programming is managing our concurency
 
+<hr />
+
 ## 2️⃣ CallBack
 
 ```javascript
@@ -44,3 +46,9 @@ setTimeout(function () {
   }, 1000);
 }, 1000);
 ```
+
+### INVERSION OF CONTROL - FIRST callback PROBLEM
+
+👉 MEANS there's part of my program that I'm in control of executing, and there's another portion of my code that I'm NOT in control of executing
+
+👉 Take the First half of my program that executes NOW, second half of my code executes in the CALLBACK, and when I give that callback to somebody else - that INVERSE the control and PUT them in control of WHEN and HOW (in what manner) to execute the second half of my program
