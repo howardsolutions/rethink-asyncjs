@@ -4,6 +4,8 @@
 
 👉 In computing sense, paralleism is expressed through threads
 
+👉 Parallelism is when tasks literally run (instantly) at the same time, e.g., on a multicore processor.
+
 👉 Paralleism is about Optimization <br />
 if I have a bunch of things, I don't wanna wait to do the second set of tasks until the first finished, If it's possible to do both at the same time, we can get things done faster - it much better
 
@@ -21,8 +23,24 @@ if I have a bunch of things, I don't wanna wait to do the second set of tasks un
 
 ### Concurrency
 
-👉 Describe concurrency as two higher level tasks happening within the same timeframe
+👉 Describe concurrency as two higher level tasks happening within the same `timeframe`
+
+👉 Concurrency is when two or more tasks can start, run, and complete in `overlapping time periods`. It doesn't necessarily mean they'll ever both be running at the same instant like Parallel.
 
 👉 Asynchronous programming is managing our concurency
 
 ## 2️⃣ CallBack
+
+```javascript
+setTimeout(function () {
+  console.log('One');
+
+  setTimeout(function () {
+    console.log('Two');
+
+    setTimeout(function () {
+      console.log('three');
+    }, 1000);
+  }, 1000);
+}, 1000);
+```
