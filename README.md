@@ -52,3 +52,29 @@ setTimeout(function () {
 👉 MEANS there's part of my program that I'm in control of executing, and there's another portion of my code that I'm NOT in control of executing
 
 👉 Take the First half of my program that executes NOW, second half of my code executes in the CALLBACK, and when I give that callback to somebody else - that INVERSE the control and PUT them in control of WHEN and HOW (in what manner) to execute the second half of my program
+
+### NOT REASONABLE - hard to read, maintain and understand - SECOND callback PROBLEM
+
+<hr />
+
+## 3️⃣ Synchronous and Asynchronous Thunks - pattern on top of callback
+
+### Synchronous Thunk
+
+```js
+function add(x, y) {
+  return x + y;
+}
+
+var thunk = function () {
+  return add(10, 15);
+};
+
+thunk(); // 25
+```
+
+👉 is a function that has everything already that needs to give you some value back, you dont need to pass any arguments in, simply call it, give value back
+
+👉 is just a function with some closure state keeping track of some value, it's a container around that particular collection of state, now it's a container that I can pass around anywhere in my program
+
+I don't have to pass the value it self, just need to pass the wrapper around that state
