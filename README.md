@@ -78,3 +78,29 @@ thunk(); // 25
 👉 is just a function with some closure state keeping track of some value, it's a container around that particular collection of state, now it's a container that I can pass around anywhere in my program
 
 I don't have to pass the value it self, just need to pass the wrapper around that state
+
+👉 That's the fundamental conceptual underpinnning for what a Promise is - a Wrapper around a Value
+
+### Asynchronous Thunk
+
+```js
+function addAsync(x, y, cb) {
+  setTimeout(function () {
+    cb(x + y);
+  }, 1000);
+}
+
+var thunk = function (cb) {
+  addAsync(10, 15, cb);
+};
+
+thunk(function (sum) {
+  console.log(sum); // 25
+});
+```
+
+👉 Any time we call `thunk` and pass in a callback `cb` we know we gonna get the value out.
+
+👉 We have produced the value that has become time independent, no matter the value is there now? or it's gonna come LATER we still use it in exactly same way.
+
+👉 Time is the most complex Factor of state in your program
