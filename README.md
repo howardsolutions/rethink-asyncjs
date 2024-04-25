@@ -81,6 +81,8 @@ I don't have to pass the value it self, just need to pass the wrapper around tha
 
 👉 That's the fundamental conceptual underpinnning for what a Promise is - a Wrapper around a Value
 
+👉 Thunks are Promises without fancy API
+
 ### Asynchronous Thunk
 
 ```js
@@ -104,3 +106,18 @@ thunk(function (sum) {
 👉 We have produced the value that has become time independent, no matter the value is there now? or it's gonna come LATER we still use it in exactly same way.
 
 👉 Time is the most complex Factor of state in your program
+
+#### Lazy Thunk, Active Thunk
+
+👉 Lazy thunk is the thunk in that it does not do the work `until you call it the first time`
+
+👉 Active thunk did the work right away and just held on to the response
+
+### Thunks and Closure
+
+👉 By using the Closure to maintain the state of something, we eliminate time as a complecting factor of state.
+
+👉 Time is the most complex Factor of state in your program
+Understanding the `order in which things happen` and `the way things change over time` is the most complex part of your application.
+
+<hr />
