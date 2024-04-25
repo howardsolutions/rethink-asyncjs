@@ -121,3 +121,28 @@ thunk(function (sum) {
 Understanding the `order in which things happen` and `the way things change over time` is the most complex part of your application.
 
 <hr />
+
+## 4️⃣ Promise
+
+👉 A placeholder for the `future value` of an asynchronous action. <br />
+👉 Promise UN-INVERT the inversion control problem => That's a BIG DEAL
+
+### wait! Still have callback pass in to handle resolved value or rejected error???
+
+![Still callback?](/images/still%20callback.png)
+
+### 🤔 Promises were all about solving callback error? get rid of callbacks hell?
+
+### SO why still passed in callback? => NOT really solved the inverstion control problem???
+
+### Promise Trust:
+
+👉 Only resolved ONE <br />
+👉 EITHER SUCCESS OR ERROR <br />
+👉 Messages passed / kept <br />
+👉 Exceptions become errors <br />
+👉 IMMUTABLE one resolved <br />
+
+### Flow Control
+
+#### How do promises allow us to manage sequential flow control? => BY CHAINING PROMISES
