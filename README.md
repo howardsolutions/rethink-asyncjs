@@ -143,6 +143,26 @@ Understanding the `order in which things happen` and `the way things change over
 👉 Exceptions become errors <br />
 👉 IMMUTABLE one resolved <br />
 
-### Flow Control
+### Flow Control - Promise Chaining .then() and .catch()
 
 #### How do promises allow us to manage sequential flow control? => BY CHAINING PROMISES
+
+### Abstractions
+
+### Promise "GATE" - Promise.all()
+
+![Promise Gate](/images/promise%20gate.png)
+
+👉 OLD SCHOOL Computer Science we call Promise.all is a GATE
+
+👉 Whenever you have MULTIPLE THINGS happening, you don't know what ORDER they're gonna finish in, BUT all of them need to FINISH before MOVING ON => WE CALL THAT A GATE
+
+👉 If any of those Three Promises creates a Rejection => the main Promises immediately rejected
+
+### Promise "TIMEOUT" - Promise.race()
+
+👉 Wait for any resolution, whether that's `fulfillment` or `rejection` any resolution Crosses the FINISH LINE FIRST WINS! and EVERYBODY ELSE gets ignored!
+
+![Promise Timeout](/images/promise%20timeout.png)
+
+### Sequences = Automatically Chained Promises
