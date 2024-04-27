@@ -166,3 +166,25 @@ Understanding the `order in which things happen` and `the way things change over
 ![Promise Timeout](/images/promise%20timeout.png)
 
 ### Sequences = Automatically Chained Promises
+
+<hr />
+
+## 5️⃣ Generator (yield)
+
+👉 JS did not invent Generator, they come from other languages like Python
+
+👉 Thing we're trying to create with the JS generator is a `syntactic form` of declaring a state machine.
+
+👉 `State machine` is a series of flow from one state to another state and to another state, and declaratively listing all those states and those transition out.
+
+```js
+function* gen() {
+  console.log('Hello');
+  yield;
+  console.log('World');
+}
+
+var it = gen();
+it.next(); // Hello
+it.next(); // World
+```
