@@ -188,3 +188,12 @@ var it = gen();
 it.next(); // Hello
 it.next(); // World
 ```
+
+👉 when the function is running, it would run across a `yield` keyword and at that moment, everything LITERALLY freezes, it pauses => generator enters this paused state => it will wait for that pause state indefinitely UNTIL some other actor comes along and says `it's time to Resume`
+
+👉 While the Generator is paused, ON the INSIDE, everything is completely BLOCKED
+nothing is happening
+
+👉 Executing a Generator does not actually run any of its code INSTEAD it produces an `iterator`
+
+![Generator Message](/images/Generator%20message.png)
