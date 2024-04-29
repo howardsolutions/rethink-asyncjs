@@ -177,6 +177,8 @@ Understanding the `order in which things happen` and `the way things change over
 
 👉 `State machine` is a series of flow from one state to another state and to another state, and declaratively listing all those states and those transition out.
 
+### Synchronous Generator
+
 ```js
 function* gen() {
   console.log('Hello');
@@ -197,3 +199,17 @@ nothing is happening
 👉 Executing a Generator does not actually run any of its code INSTEAD it produces an `iterator`
 
 ![Generator Message](/images/Generator%20message.png)
+
+### Async Generator
+
+![Async generator example](/images/async%20generator%20example.png)
+
+👉 We have SYNCHRONOUS looking ASYNCHRONOUS CODE
+
+👉 We're able to BLOCK locally inside of our generator, the generator able to pause, wait some other background thing to finish, and RESUME with the value that we're waiting for.
+
+👉 Line 7 did not run until Line 6 is finished, line 11 did not run until line 8 is finished, because of the `yield` keywords
+
+👉 If I console.log("something else") in line 12 => It's gonna go right away! <br />
+👉 We only pause at the yield keywords, and keep going with the synchronous code, because we're running in `async generator` <br />
+👉 Everything else keep running until the next `yield` keyword or until the end when it (current yield keyword) finished.
