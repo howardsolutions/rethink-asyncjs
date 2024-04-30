@@ -210,6 +210,18 @@ nothing is happening
 
 👉 Line 7 did not run until Line 6 is finished, line 11 did not run until line 8 is finished, because of the `yield` keywords
 
-👉 If I console.log("something else") in line 12 => It's gonna go right away! <br />
-👉 We only pause at the yield keywords, and keep going with the synchronous code, because we're running in `async generator` <br />
-👉 Everything else keep running until the next `yield` keyword or until the end when it (current yield keyword) finished.
+👉 We only pause at the yield keywords, and keep going with the synchronous code, Everything else (synchronous) keep running until the next `yield` keyword or until the end when it (current yield keyword) finished.
+
+### Promises + Generators
+
+👉 We SOLVED the non-sequencial reasonability issue BUT
+
+👉 We still have the inverstion of control problem (callback hell) => Somebody can call `it.next` in a way that we're not expecting and screw everything up
+
+=> We gonna put Promises together with Generators
+
+👉 Promises are gonna SOLVE our INVERSION OF CONTROL ISSUE, solve our trust issue, and flow control issue.
+
+👉 Generators are gonna SOLVE non-sequential reasonability issue
+
+👉 `yield promise` => pausing => then we say `.then` and when the promise `resolve` => resume the generator

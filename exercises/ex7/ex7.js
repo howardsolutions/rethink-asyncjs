@@ -24,11 +24,21 @@ function getFile(file) {
     fakeAjax(file, done);
   });
 }
-// Request all files at once in
-// "parallel" via `getFile(..)`.
-//
-// Render as each one finishes,
-// but only once previous rendering
-// is done.
 
-// ???
+ASQ().runner(function* main() {
+  let p1 = getFile('file1');
+  let p2 = getFile('file2');
+  let p3 = getFile('file3');
+
+  let text1 = yield p1;
+  output(text1);
+
+  let text2 = yield p2;
+
+  output(text2);
+
+  let text3 = yield p3;
+  output(text3);
+
+  output('Completed');
+});
