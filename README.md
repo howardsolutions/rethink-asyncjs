@@ -225,3 +225,27 @@ nothing is happening
 👉 Generators are gonna SOLVE non-sequential reasonability issue
 
 👉 `yield promise` => pausing => then we say `.then` and when the promise `resolve` => resume the generator
+
+<hr />
+
+## 6️⃣ OBSERVABLES
+
+### Events + Promises
+
+👉 Poor man's definition for concurrency: Basically managing all these things that are happening and response to thing in proper order
+
+👉 Most of the asynchronousity that's happning in our program is actually event oriented. All of our UI is almost entirely event oriented
+
+👉 Promise work when there's a single request and a single response
+
+👉 What happen when the source of our information that's coming is actually a repeated stream of information that's coming?
+
+👉 BUT Promise can only resolved once. 👉 That's a problem with promises when they come to work with repeated events
+
+👉 Promises by themselves are not going to model well in an EVENT oriented world
+
+### Observable
+
+👉 is an adapter hooked onto an event source that produces a promise everytime a new event comes through.
+
+👉 is a stream of data that's gonna come through, it's being pumped by a set of events
